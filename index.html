@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Course Ledger — Free Programming Courses, Catalogued</title>
+<meta name="description" content="A curated ledger of free OOP and FOP programming courses, plus a place to leave feedback for fellow learners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">§</span>
+      <span class="brand-text">The Course&nbsp;Ledger</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#catalog">Catalog</a>
+      <a href="#stats">Stats</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Vol. I — Programming Fundamentals &amp; OOP</p>
+      <h1 class="hero-title">Every good free<br>course, <em>catalogued</em><br>in one ledger.</h1>
+      <p class="hero-sub">No paywalls, no fake "free trials." Just a single, honest shelf of the best places to learn Programming Fundamentals and Object-Oriented Programming — reviewed by the people who actually finished them.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn btn-primary">Open the catalog</a>
+        <a href="#feedback" class="btn btn-ghost">Leave a review</a>
+      </div>
+      <p class="hero-note">Currently tracking <strong id="hero-course-count">12</strong> courses across <strong id="hero-source-count">6</strong> trusted sources.</p>
+    </div>
+
+    <div class="ledger-widget" aria-label="Live site statistics">
+      <div class="ledger-widget-head">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="ledger-widget-title">visitor_log.dat</span>
+      </div>
+      <div class="ledger-widget-body">
+        <div class="stat-row">
+          <span class="stat-label">visits_logged</span>
+          <span class="stat-value" id="stat-visits">0000000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">unique_sessions</span>
+          <span class="stat-value" id="stat-sessions">0000000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">reviews_filed</span>
+          <span class="stat-value" id="stat-reviews">0000000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">avg_rating</span>
+          <span class="stat-value" id="stat-avg">--</span>
+        </div>
+        <div class="ledger-cursor"><span>&gt;</span><span class="blink">_</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-rule"></div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="catalog" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Entry 02</p>
+      <h2>The Catalog</h2>
+      <p class="section-sub">Pick a track. Each entry links straight to the source — we don't gatekeep, we point.</p>
+    </div>
+
+    <div class="track-tabs" role="tablist" aria-label="Course tracks">
+      <button class="track-tab is-active" data-track="fop" role="tab" aria-selected="true">Fundamentals of Programming</button>
+      <button class="track-tab" data-track="oop" role="tab" aria-selected="false">Object-Oriented Programming</button>
+      <button class="track-tab" data-track="more" role="tab" aria-selected="false">Web &amp; General</button>
+    </div>
+
+    <div class="ledger-list" id="ledger-list"><!-- injected by script.js --></div>
+  </div>
+</section>
+
+<!-- ============ STATS / FEEDBACK SUMMARY ============ -->
+<section class="stats-band" id="stats">
+  <div class="wrap stats-grid">
+    <div class="stats-copy">
+      <p class="eyebrow">Entry 03</p>
+      <h2>Kept in the open</h2>
+      <p class="section-sub">Every number below updates live from this browser's ledger. No accounts, no tracking pixels — just a running tally of who stopped by and what they thought.</p>
+    </div>
+    <div class="stats-cards">
+      <div class="stat-card">
+        <span class="stat-card-num" id="card-visits">0</span>
+        <span class="stat-card-label">total visits</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num" id="card-reviews">0</span>
+        <span class="stat-card-label">reviews filed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num" id="card-rating">0.0</span>
+        <span class="stat-card-label">average rating</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card-num" id="card-today">0</span>
+        <span class="stat-card-label">visits today</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEEDBACK FORM ============ -->
+<section class="feedback" id="feedback">
+  <div class="wrap feedback-grid">
+    <div class="feedback-intro">
+      <p class="eyebrow">Entry 04</p>
+      <h2>Leave your mark in the ledger</h2>
+      <p class="section-sub">Tell future learners what worked. Your review is stored right here on this device's ledger and shown below immediately.</p>
+      <ul class="feedback-points">
+        <li>Takes under a minute.</li>
+        <li>No login, no email required.</li>
+        <li>Shown publicly in the "Recent entries" list.</li>
+      </ul>
+    </div>
+
+    <form class="feedback-form" id="feedback-form" novalidate>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input type="text" id="f-name" name="name" placeholder="e.g. Areeba K." maxlength="40" required>
+      </div>
+
+      <div class="field">
+        <label for="f-course">Which course/source?</label>
+        <input type="text" id="f-course" name="course" placeholder="e.g. freeCodeCamp — OOP in Java" maxlength="60" required>
+      </div>
+
+      <div class="field">
+        <label>Rating</label>
+        <div class="star-input" id="star-input" role="radiogroup" aria-label="Rating out of 5">
+          <button type="button" class="star" data-val="1" aria-label="1 star">★</button>
+          <button type="button" class="star" data-val="2" aria-label="2 stars">★</button>
+          <button type="button" class="star" data-val="3" aria-label="3 stars">★</button>
+          <button type="button" class="star" data-val="4" aria-label="4 stars">★</button>
+          <button type="button" class="star" data-val="5" aria-label="5 stars">★</button>
+        </div>
+        <input type="hidden" id="f-rating" name="rating" value="0">
+      </div>
+
+      <div class="field">
+        <label for="f-message">Your review</label>
+        <textarea id="f-message" name="message" rows="4" placeholder="What did you think? Was it actually free? Would you recommend it for OOP/FOP?" maxlength="400" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">File this review</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="wrap">
+    <div class="recent-head">
+      <h3>Recent entries</h3>
+      <button class="btn btn-text" id="clear-reviews">Clear my local reviews</button>
+    </div>
+    <div class="recent-list" id="recent-list"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / FOOTER ============ -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">Entry 05</p>
+      <h2>Why this exists</h2>
+      <p class="section-sub">Search results for "free programming course" are mostly ads wearing a syllabus. This page is the opposite: a short, honest list, kept by someone who actually wants you to learn Programming Fundamentals and OOP without paying for it — and a paper trail of reviews from people who tried the same links you're about to click.</p>
+    </div>
+    <div class="about-meta">
+      <p>Have a great free course we're missing? Mention it in the review form above and tag it with the course name — entries are reviewed and added to the catalog by hand.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>The Course Ledger — built for learners, not algorithms.</span>
+    <span id="footer-year"></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
